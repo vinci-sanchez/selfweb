@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <html class="mdui-theme-"></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css" />
+    <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+    <title>神秘的小空间</title>
+  </head>
+  <body>
+    <mdui-button id="theme-toggle" variant="text" onclick="take()"
+      >点我</mdui-button
+    >
+    <script>
+      function take() {
+        // 把整个页面设置成暗色模式
+        mdui.setTheme("dark");
+
+        //   const button = document.querySelector(".mdui-theme-dark");
+
+        // // 修改 HTML 属性
+        // button.setAttribute("mdui-theme-dark", "mdui-theme-light ");
+
+        // // 读取 HTML 属性
+        // console.log(button.getAttribute("mdui-theme-dark")); // outlined
+      }
+    </script>
+  </body>
+</html>
