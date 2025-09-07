@@ -1,30 +1,112 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-  <html class="mdui-theme-"></html>
+<html lang="zh-CN" class="mdui-theme-auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Filled -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Outlined -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- Rounded -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+
+    <!-- Sharp -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+
+    <!-- Two Tone -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css" />
     <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+    <script src="./css/main.css"></script>
     <title>神秘的小空间</title>
+    <style>
+      .middle {
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        width: 100%; /* 示例容器大小 */
+        height: 90vh; /* 示例高度，占满视口 */
+      }
+    </style>
   </head>
   <body>
-    <mdui-button id="theme-toggle" variant="text" onclick="take()"
-      >点我</mdui-button
-    >
+    <div>
+      <mdui-card
+        style="width: 100%; height: 98.5vh"
+        variant="outlined"
+        clickable
+      >
+        <div
+          style="
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            height: 64px;
+          "
+        >
+          <div class="middle" style="width: 60px; height: 64px">
+            <mdui-button-icon icon="123"></mdui-button-icon>
+          </div>
+          <div class="middle" style="width: 60px; height: 64px">
+            <mdui-tooltip content="日or夜">
+              <mdui-button-icon
+                id="button_mode"
+                icon="bedtime"
+                onclick="Change_mode()"
+              ></mdui-button-icon>
+            </mdui-tooltip>
+          </div>
+        </div>
+        <div class="middle">
+          <mdui-button variant="text" style="transform: scale(1.5)"
+            >Hello!</mdui-button
+          >
+        </div>
+      </mdui-card>
+    </div>
+    <mdui-button-icon icon="bedtime"></mdui-button-icon>
+
+    <mdui-button>Button</mdui-button>
+    <mdui-button id="theme-toggle" variant="text">点我</mdui-button>
     <script>
-      function take() {
+      function Change_mode() {
         // 把整个页面设置成暗色模式
-        mdui.setTheme("dark");
-
-        //   const button = document.querySelector(".mdui-theme-dark");
-
-        // // 修改 HTML 属性
-        // button.setAttribute("mdui-theme-dark", "mdui-theme-light ");
-
-        // // 读取 HTML 属性
-        // console.log(button.getAttribute("mdui-theme-dark")); // outlined
+        // setTheme("light");
+        const mode = document.documentElement;
+        const button = document.querySelector("#button_mode");
+        let Originally = mdui.getTheme();
+        if (Originally === "light") {
+          mode.setAttribute("class", "mdui-theme-dark ");
+          button.setAttribute("icon", "bedtime");
+        } else {
+          // 修改 HTML 属性
+          mode.setAttribute("class", "mdui-theme-light ");
+          button.setAttribute("icon", "light-mode");
+        }
       }
     </script>
+    <!-- <div id="root"></div>
+       <script src="./index.js" type="module"></script>
+       TMD跟那小丑一样
+       杀碧东西
+       老一辈和新方法
+       草 -->
   </body>
 </html>
