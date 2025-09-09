@@ -3,31 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Filled -->
+
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
 
-    <!-- Outlined -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet"
     />
 
-    <!-- Rounded -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
       rel="stylesheet"
     />
 
-    <!-- Sharp -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
       rel="stylesheet"
     />
 
-    <!-- Two Tone -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone"
       rel="stylesheet"
@@ -35,6 +31,11 @@
     <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css" />
     <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
     <script src="./css/main.css"></script>
+    <!-- <script src="./index.js" type="module"></script> -->
+    <!-- TMD跟那小丑一样
+       杀碧东西
+       老一辈和新方法
+       草 -->
     <title>神秘的小空间</title>
     <style>
       .middle {
@@ -47,6 +48,7 @@
     </style>
   </head>
   <body>
+    <div id="root"></div>
     <div>
       <mdui-card
         style="width: 100%; height: 98.5vh"
@@ -75,7 +77,22 @@
           </div>
         </div>
         <div class="middle">
-          <mdui-button variant="text" style="transform: scale(1.5)"
+          <mdui-snackbar placement="top-start">别点了！！！</mdui-snackbar>
+          <mdui-snackbar placement="top">别点了！！！</mdui-snackbar>
+          <mdui-snackbar placement="top-end">别点了！！！</mdui-snackbar>
+          <mdui-snackbar placement="bottom-start">别点了！！！</mdui-snackbar>
+          <mdui-snackbar placement="bottom">别点了！！！</mdui-snackbar>
+          <mdui-snackbar placement="bottom-end">别点了！！！</mdui-snackbar>
+          <mdui-snackbar
+            close-on-outside-click
+            auto-close-delay="1000"
+            class="example-snackbar"
+            >欢迎</mdui-snackbar
+          >
+          <mdui-button
+            variant="text"
+            style="transform: scale(1.5)"
+            disabled="false"
             >Hello!</mdui-button
           >
         </div>
@@ -85,10 +102,90 @@
 
     <mdui-button>Button</mdui-button>
     <mdui-button id="theme-toggle" variant="text">点我</mdui-button>
+
     <script>
+      let wel_card = 0;
+      const snackbar = document.querySelector(".example-snackbar");
+      const openButton = snackbar.nextElementSibling;
+      const snackbartopstart = document.querySelector(
+        ".mdui-snackbar[placement='top-start']"
+      );
+      const snackbartop = document.querySelector(
+        ".mdui-snackbar[placement='top']"
+      );
+      const snackbartopend = document.querySelector(
+        ".mdui-snackbar[placement='top-end']"
+      );
+      const snackbarbottomstart = document.querySelector(
+        ".mdui-snackbar[placement='bottom-start']"
+      );
+      const snackbarbottom = document.querySelector(
+        ".mdui-snackbar[placement='bottom']"
+      );
+      const snackbarbottomend = document.querySelector(
+        ".mdui-snackbar[placement='bottom-end']"
+      );
+      function updateSnackbar() {
+        switch (wel_card) {
+          case 0:
+            snackbar.textContent = "欢迎(≧∇≦)/";
+            break;
+          case 1:
+            snackbar.textContent = "欢迎(〜￣▽￣)〜";
+            break;
+          case 2:
+            snackbar.textContent = "点别处呗 （•͈ ₃ •͈）";
+            break;
+          case 3:
+            snackbar.textContent = "我点着不好玩(ᗜ𖥦ᗜ)";
+            break;
+          case 4:
+            snackbar.textContent = "真的(๑ᵒᯅᵒ๑)";
+            break;
+          case 5:
+            snackbar.textContent = "别点了૮₍･᷄-･᷅₎ა";
+            break;
+          case 6:
+            snackbar.textContent = "我没活了U(TｪT)U";
+            break;
+          case 7:
+            snackbar.textContent = "真没了 (꒦^꒦)";
+            break;
+          case 8:
+            snackbar.textContent = "大哥，别点了₍ (̨̡ ‾᷄ᗣ‾᷅ )̧̢ ₎";
+            break;
+          case 9:
+            snackbar.textContent = "别点了！！！";
+            show_all_snackbar();
+            break;
+          default:
+            snackbar.textContent = "别点我了QAQ";
+        }
+        wel_card++;
+      }
+      //updateSnackbar();
+      function show_all_snackbar() {
+        // 选中所有六个带 placement 属性的 snackbar
+        const snackbars = document.querySelectorAll("mdui-snackbar[placement]");
+        snackbars.forEach((snackbar) => {
+          snackbar.open = true;
+        });
+      }
+
+      openButton.addEventListener("click", () => {
+        updateSnackbar();
+        snackbar.open = true;
+
+        openButton.setAttribute("disabled", "true");
+        setTimeout(() => {
+          openButton.setAttribute("disabled", "false");
+        }, 1200);
+      });
+
+      Change_mode();
       function Change_mode() {
         // 把整个页面设置成暗色模式
-        // setTheme("light");
+
         const mode = document.documentElement;
         const button = document.querySelector("#button_mode");
         let Originally = mdui.getTheme();
@@ -102,11 +199,5 @@
         }
       }
     </script>
-    <!-- <div id="root"></div>
-       <script src="./index.js" type="module"></script>
-       TMD跟那小丑一样
-       杀碧东西
-       老一辈和新方法
-       草 -->
   </body>
 </html>
