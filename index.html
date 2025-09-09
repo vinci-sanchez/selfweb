@@ -104,6 +104,20 @@
     <mdui-button id="theme-toggle" variant="text">点我</mdui-button>
 
     <script>
+      function Change_mode_first() {
+        const mode = document.documentElement;
+        const button = document.querySelector("#button_mode");
+        let Originally = mdui.getTheme();
+        if (Originally === "light") {
+          mode.setAttribute("class", "mdui-theme-light ");
+          button.setAttribute("icon", "light-mode");
+        } else {
+          // 修改 HTML 属性
+          mode.setAttribute("class", "mdui-theme-dark ");
+          button.setAttribute("icon", "bedtime");
+        }
+      }
+      Change_mode_first();//应该跟windows有关的bug
       let wel_card = 0;
       const snackbar = document.querySelector(".example-snackbar");
       const openButton = snackbar.nextElementSibling;
@@ -182,7 +196,6 @@
         }, 1200);
       });
 
-      Change_mode();
       function Change_mode() {
         // 把整个页面设置成暗色模式
 
