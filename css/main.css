@@ -1,9 +1,58 @@
-
-
 .middle {
   display: flex;
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
   width: 100%; /* 示例容器大小 */
   height: 100vh; /* 示例高度，占满视口 */
+}
+.parent-box {
+  position: relative;
+  overflow: hidden;
+}
+.child-box {
+  position: absolute;
+}
+.blackgroundtxt {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+  color: #d0bcff;
+}
+.char {
+  display: inline-block; /* 字符独立显示 */
+  animation: showAndHide 4s forwards; /* 4秒循环动画 */
+  opacity: 0; /* 初始不可见 */
+}
+@keyframes showAndHide {
+      0% { opacity: 0; } /* 初始不可见 */
+      20% { opacity: 1; } /* 淡入 */
+      40% { opacity: 1; } /* 保持可见 */
+      60% { opacity: 0; } /* 淡出 */
+      100% { opacity: 0; } /* 保持不可见 */
+    }
+
+table {
+  text-align: center;
+}
+table td,
+table th {
+  border: 1px solid #4d4d4d;
+  padding: 12px 16px;
+  text-align: center;
+  vertical-align: middle;
+  /* 让内容自适应 */
+  word-break: break-all;
+  width: 120px; /* 固定单元格宽度，可根据需要调整 */
+}
+table tr:first-child td:first-child {
+  border-top-left-radius: 16px;
+}
+table tr:first-child td:last-child {
+  border-top-right-radius: 16px;
+}
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 16px;
+}
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 16px;
 }

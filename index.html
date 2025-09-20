@@ -1,216 +1,213 @@
 <!DOCTYPE html>
 <html lang="zh-CN" class="mdui-theme-auto">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-      rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
-      rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
-      rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css" />
-    <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
-    <script src="./css/main.css"></script>
-    <!-- <script src="./index.js" type="module"></script> -->
-    <!-- TMD跟那小丑一样
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css" />
+  <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+  <link rel="stylesheet" href="./css/main.css" />
+  <!-- <style>
+  @import url('./css/main.css');
+</style> -->
+  <!-- <script src="./index.js" type="module"></script> -->
+  <!-- TMD跟那小丑一样
        杀碧东西
        老一辈和新方法
        草 -->
-    <title>神秘的小空间</title>
-    <style>
-      .middle {
-        display: flex;
-        justify-content: center; /* 水平居中 */
-        align-items: center; /* 垂直居中 */
-        width: 100%; /* 示例容器大小 */
-        height: 90vh; /* 示例高度，占满视口 */
-      }
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
-    <div>
-      <mdui-card
-        style="width: 100%; height: 98.5vh"
-        variant="outlined"
-        clickable
-      >
-        <div
-          style="
+  <title>神秘的小空间</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <div>
+    <mdui-card style="position: relative; width: 100%; height: 98.5vh" variant="outlined" clickable>
+      <div style="
             display: flex;
             justify-content: flex-end;
             width: 100%;
             height: 64px;
-          "
-        >
-          <div class="middle" style="width: 60px; height: 64px">
-            <mdui-button-icon icon="123"></mdui-button-icon>
-          </div>
-          <div class="middle" style="width: 60px; height: 64px">
-            <mdui-tooltip content="日or夜">
-              <mdui-button-icon
-                id="button_mode"
-                icon="bedtime"
-                onclick="Change_mode()"
-              ></mdui-button-icon>
-            </mdui-tooltip>
-          </div>
+          ">
+        <div class="middle" style="width: 60px; height: 64px">
+          <mdui-button-icon icon="123"></mdui-button-icon>
         </div>
-        <div class="middle">
-          <mdui-snackbar placement="top-start">别点了！！！</mdui-snackbar>
-          <mdui-snackbar placement="top">别点了！！！</mdui-snackbar>
-          <mdui-snackbar placement="top-end">别点了！！！</mdui-snackbar>
-          <mdui-snackbar placement="bottom-start">别点了！！！</mdui-snackbar>
-          <mdui-snackbar placement="bottom">别点了！！！</mdui-snackbar>
-          <mdui-snackbar placement="bottom-end">别点了！！！</mdui-snackbar>
-          <mdui-snackbar
-            close-on-outside-click
-            auto-close-delay="1000"
-            class="example-snackbar"
-            >欢迎</mdui-snackbar
-          >
-          <mdui-button
-            variant="text"
-            style="transform: scale(1.5)"
-            disabled="false"
-            >Hello!</mdui-button
-          >
+        <div class="middle" style="width: 60px; height: 64px">
+          <mdui-tooltip content="日or夜">
+            <mdui-button-icon id="button_mode" icon="bedtime"></mdui-button-icon>
+          </mdui-tooltip>
         </div>
-      </mdui-card>
+      </div>
+      <!-- <mdui-linear-progress class="child-box"
+        style="transform-origin: top left; transform: rotate(90deg);top: 20%;left: 33%;height: 3px;width: 13%;"></mdui-linear-progress>
+      <mdui-linear-progress class="child-box"
+        style="transform-origin: top left; transform: rotate(90deg);top:30%;left: 67%; height: 3px;width: 30%;"></mdui-linear-progress>
+      <mdui-linear-progress class="child-box" style="top:47%;left: 10%;height: 3px;width: 50%;"></mdui-linear-progress>
+
+      <mdui-linear-progress class="child-box"
+        style="top: 47%;left: 70%; width: 10%;height: 3px;"></mdui-linear-progress>
+      <mdui-linear-progress class="child-box"
+        style="transform-origin: top left; transform: rotate(90deg); top: 50%;left: 33%; height: 3px;width: 15%;"></mdui-linear-progress>
+      <mdui-linear-progress class="child-box" style="top: 65%;left: 10%;width: 70%;height: 3px;"></mdui-linear-progress>
+
+      <mdui-linear-progress class="child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 70%;left: 33%; width: 20%;height: 3px;"></mdui-linear-progress>
+      <mdui-linear-progress class="child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 70%;left: 67%; width: 30%;height: 3px;"></mdui-linear-progress> -->
+      <div id="bgdtxt_0" class="blackgroundtxt child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 65%;font-size: 20px;display: none;">背景文字
+      </div>
+      <!-- 应该是一个就行 -->
+       <!-- ok，不是一个就行 -->
+      <div id="bgdtxt_1" class="blackgroundtxt child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 67%;font-size: 20px;display: none;">背景文字
+      </div>
+      <div id="bgdtxt_2" class="blackgroundtxt child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 69%;font-size: 20px;display: none;">背景文字
+      </div>
+      <div id="bgdtxt_3" class="blackgroundtxt child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 72%;font-size: 20px;display: none;">背景文字
+      </div>
+      <div id="bgdtxt_4" class="blackgroundtxt child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 74%;font-size: 20px;display: none;">背景文字
+      </div>
+      <div id="bgdtxt_5" class="blackgroundtxt child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 76%;font-size: 20px;display: none;">背景文字
+      </div>
+      <div id="bgdtxt_6" class="blackgroundtxt child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 78%;font-size: 20px;display: none;">背景文字
+      </div>
+      <mdui-snackbar placement="top-start">别点了！！！</mdui-snackbar>
+      <mdui-snackbar placement="top">别点了！！！</mdui-snackbar>
+      <mdui-snackbar placement="top-end">别点了！！！</mdui-snackbar>
+      <mdui-snackbar placement="bottom-start">别点了！！！</mdui-snackbar>
+      <mdui-snackbar placement="bottom">别点了！！！</mdui-snackbar>
+      <mdui-snackbar placement="bottom-end">别点了！！！</mdui-snackbar>
+      <mdui-snackbar close-on-outside-click auto-close-delay="1000" class="example-snackbar">欢迎</mdui-snackbar>
+
+      <mdui-button variant="text" style="
+            transform: scale(1.5);
+            font-size: 23px;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 60px;
+            display: flex;
+          ">Hello!</mdui-button>
+      <!-- <mdui-linear-progress></mdui-linear-progress> -->
+    </mdui-card>
+  </div>
+  <mdui-button-icon icon="bedtime"></mdui-button-icon>
+
+  <mdui-button>Button</mdui-button>
+  <mdui-button id="theme-toggle" variant="text">点我</mdui-button>
+
+  <!-- <div style="display:flex; width: 80%; margin: 0 auto"> -->
+  <div style="
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+      ">
+    <!-- <mdui-card style="width: 100%;">
+    <mdui-list-subheader>非手风琴模式</mdui-list-subheader>
+    <mdui-collapse class="example-value">
+      <mdui-collapse-item value="item-1">
+        <mdui-list-item slot="header" icon="near_me">Item 1</mdui-list-item>
+        <div style="margin-left: 2.5rem">
+          <mdui-list-item>Item 1 - subitem</mdui-list-item>
+        </div>
+      </mdui-collapse-item>
+    </mdui-collapse> -->
+
+    <mdui-card style="width: 50%; height: 300px"> </mdui-card>
+    <div style="width: 50%">
+      <mdui-collapse class="example-value">
+        <mdui-collapse-item value="item-2">
+          <mdui-list-item slot="header" icon="near_me">我在干啥？</mdui-list-item>
+          <div>
+            <table style="
+                  width: 100%;
+                  border-collapse: separate;
+                  border-spacing: 0;
+                  margin: 0 auto;
+                  border-radius: 16px;
+                  overflow: hidden;
+                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                ">
+              <tr>
+                <td id="time_0">Item 1</td>
+                <td id="active_0">Item 2</td>
+                <td id="Memory_0">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_1">Item 1</td>
+                <td id="active_1">Item 2</td>
+                <td id="Memory_1">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_2">Item 1</td>
+                <td id="active_2">Item 2</td>
+                <td id="Memory_2">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_3">Item 1</td>
+                <td id="active_3">Item 2</td>
+                <td id="Memory_3">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_4">Item 1</td>
+                <td id="active_4">Item 2</td>
+                <td id="Memory_4">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_5">Item 1</td>
+                <td id="active_5">Item 2</td>
+                <td id="Memory_5">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_6">Item 1</td>
+                <td id="active_6">Item 2</td>
+                <td id="Memory_6">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_7">Item 1</td>
+                <td id="active_7">Item 2</td>
+                <td id="Memory_7">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_8">Item 1</td>
+                <td id="active_8">Item 2</td>
+                <td id="Memory_8">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_9">Item 1</td>
+                <td id="active_9">Item 2</td>
+                <td id="Memory_9">Item 2</td>
+              </tr>
+              <!-- <mdui-list-item>Item 2 - subitem</mdui-list-item> -->
+            </table>
+          </div>
+        </mdui-collapse-item>
+      </mdui-collapse>
     </div>
-    <mdui-button-icon icon="bedtime"></mdui-button-icon>
+  </div>
+  <mdui-linear-progress value="0.5"></mdui-linear-progress>
 
-    <mdui-button>Button</mdui-button>
-    <mdui-button id="theme-toggle" variant="text">点我</mdui-button>
+  <script src="client.js" type="module"></script>
 
-    <script>
-      function Change_mode_first() {
-        const mode = document.documentElement;
-        const button = document.querySelector("#button_mode");
-        let Originally = mdui.getTheme();
-        if (Originally === "light") {
-          mode.setAttribute("class", "mdui-theme-light ");
-          button.setAttribute("icon", "light-mode");
-        } else {
-          // 修改 HTML 属性
-          mode.setAttribute("class", "mdui-theme-dark ");
-          button.setAttribute("icon", "bedtime");
-        }
-      }
-      Change_mode_first();//应该跟windows有关的bug
-      let wel_card = 0;
-      const snackbar = document.querySelector(".example-snackbar");
-      const openButton = snackbar.nextElementSibling;
-      const snackbartopstart = document.querySelector(
-        ".mdui-snackbar[placement='top-start']"
-      );
-      const snackbartop = document.querySelector(
-        ".mdui-snackbar[placement='top']"
-      );
-      const snackbartopend = document.querySelector(
-        ".mdui-snackbar[placement='top-end']"
-      );
-      const snackbarbottomstart = document.querySelector(
-        ".mdui-snackbar[placement='bottom-start']"
-      );
-      const snackbarbottom = document.querySelector(
-        ".mdui-snackbar[placement='bottom']"
-      );
-      const snackbarbottomend = document.querySelector(
-        ".mdui-snackbar[placement='bottom-end']"
-      );
-      function updateSnackbar() {
-        switch (wel_card) {
-          case 0:
-            snackbar.textContent = "欢迎(≧∇≦)/";
-            break;
-          case 1:
-            snackbar.textContent = "欢迎(〜￣▽￣)〜";
-            break;
-          case 2:
-            snackbar.textContent = "点别处呗 （•͈ ₃ •͈）";
-            break;
-          case 3:
-            snackbar.textContent = "我点着不好玩(ᗜ𖥦ᗜ)";
-            break;
-          case 4:
-            snackbar.textContent = "真的(๑ᵒᯅᵒ๑)";
-            break;
-          case 5:
-            snackbar.textContent = "别点了૮₍･᷄-･᷅₎ა";
-            break;
-          case 6:
-            snackbar.textContent = "我没活了U(TｪT)U";
-            break;
-          case 7:
-            snackbar.textContent = "真没了 (꒦^꒦)";
-            break;
-          case 8:
-            snackbar.textContent = "大哥，别点了₍ (̨̡ ‾᷄ᗣ‾᷅ )̧̢ ₎";
-            break;
-          case 9:
-            snackbar.textContent = "别点了！！！";
-            show_all_snackbar();
-            break;
-          default:
-            snackbar.textContent = "别点我了QAQ";
-        }
-        wel_card++;
-      }
-      //updateSnackbar();
-      function show_all_snackbar() {
-        // 选中所有六个带 placement 属性的 snackbar
-        const snackbars = document.querySelectorAll("mdui-snackbar[placement]");
-        snackbars.forEach((snackbar) => {
-          snackbar.open = true;
-        });
-      }
+  <script></script>
+</body>
 
-      openButton.addEventListener("click", () => {
-        updateSnackbar();
-        snackbar.open = true;
-
-        openButton.setAttribute("disabled", "true");
-        setTimeout(() => {
-          openButton.setAttribute("disabled", "false");
-        }, 1200);
-      });
-
-      function Change_mode() {
-        // 把整个页面设置成暗色模式
-
-        const mode = document.documentElement;
-        const button = document.querySelector("#button_mode");
-        let Originally = mdui.getTheme();
-        if (Originally === "light") {
-          mode.setAttribute("class", "mdui-theme-dark ");
-          button.setAttribute("icon", "bedtime");
-        } else {
-          // 修改 HTML 属性
-          mode.setAttribute("class", "mdui-theme-light ");
-          button.setAttribute("icon", "light-mode");
-        }
-      }
-    </script>
-  </body>
 </html>

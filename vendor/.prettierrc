@@ -1,6 +1,6 @@
 {
   "arrowParens": "always",
-  "bracketSameLine": true,
+  "bracketSameLine": false,
   "objectWrap": "preserve",
   "bracketSpacing": true,
   "semi": true,
@@ -15,9 +15,9 @@
   "vueIndentScriptAndStyle": false,
   "proseWrap": "preserve",
   "insertPragma": false,
-  "printWidth": 80,
   "requirePragma": true,
   "useTabs": false,
   "embeddedLanguageFormatting": "auto",
-  "tabWidth": 2
+  "printWidth": 10,
+  "tabWidth": 3
 }
