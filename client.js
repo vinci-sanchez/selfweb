@@ -332,4 +332,7 @@ function or_other(){
   openButton.addEventListener("click", () => dialog.open = true);
   closeButton.addEventListener("click", () => dialog.open = false);
 }
-
+  window.addEventListener('load', function() {
+      document.body.classList.remove('loading');
+      document.body.classList.add('loaded');
+    });
