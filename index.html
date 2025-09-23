@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no" />
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
@@ -31,7 +31,7 @@
 <body>
   <div id="root"></div>
   <div>
-    <mdui-card style="position: relative; width: 100%; height: 98.5vh" variant="outlined" clickable>
+    <mdui-card id="hellocard" style="position: relative; width: 100%; height: 98.5vh" variant="outlined" clickable>
       <div style="
             display: flex;
             justify-content: flex-end;
@@ -39,8 +39,9 @@
             height: 64px;
           ">
         <div class="middle" style="width: 60px; height: 64px">
-          <mdui-button-icon icon="123"></mdui-button-icon>
+          <mdui-button-icon id="stop_css" icon="pause"></mdui-button-icon>
         </div>
+        <!-- sync -->
         <div class="middle" style="width: 60px; height: 64px">
           <mdui-tooltip content="日or夜">
             <mdui-button-icon id="button_mode" icon="bedtime"></mdui-button-icon>
@@ -64,27 +65,34 @@
       <mdui-linear-progress class="child-box"
         style="transform-origin: top left;transform: rotate(90deg);top: 70%;left: 67%; width: 30%;height: 3px;"></mdui-linear-progress> -->
       <div id="bgdtxt_0" class="blackgroundtxt child-box"
-        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 65%;font-size: 20px;display: none;">背景文字
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 65%;font-size: 20px;display: none;">
+        背景文字
       </div>
       <!-- 应该是一个就行 -->
-       <!-- ok，不是一个就行 -->
+      <!-- ok，不是一个就行 -->
       <div id="bgdtxt_1" class="blackgroundtxt child-box"
-        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 67%;font-size: 20px;display: none;">背景文字
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 67%;font-size: 20px;display: none;">
+        背景文字
       </div>
       <div id="bgdtxt_2" class="blackgroundtxt child-box"
-        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 69%;font-size: 20px;display: none;">背景文字
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 69%;font-size: 20px;display: none;">
+        背景文字
       </div>
       <div id="bgdtxt_3" class="blackgroundtxt child-box"
-        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 72%;font-size: 20px;display: none;">背景文字
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 72%;font-size: 20px;display: none;">
+        背景文字
       </div>
       <div id="bgdtxt_4" class="blackgroundtxt child-box"
-        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 74%;font-size: 20px;display: none;">背景文字
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 74%;font-size: 20px;display: none;">
+        背景文字
       </div>
       <div id="bgdtxt_5" class="blackgroundtxt child-box"
-        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 76%;font-size: 20px;display: none;">背景文字
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 76%;font-size: 20px;display: none;">
+        背景文字
       </div>
       <div id="bgdtxt_6" class="blackgroundtxt child-box"
-        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 78%;font-size: 20px;display: none;">背景文字
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 78%;font-size: 20px;display: none;">
+        背景文字
       </div>
       <mdui-snackbar placement="top-start">别点了！！！</mdui-snackbar>
       <mdui-snackbar placement="top">别点了！！！</mdui-snackbar>
@@ -108,10 +116,11 @@
       <!-- <mdui-linear-progress></mdui-linear-progress> -->
     </mdui-card>
   </div>
+  <mdui-avatar src="./img/hand2.jpg" style="vertical-align: top;margin-left: 10px;"></mdui-avatar>
   <mdui-button-icon icon="bedtime"></mdui-button-icon>
-
   <mdui-button>Button</mdui-button>
   <mdui-button id="theme-toggle" variant="text">点我</mdui-button>
+
 
   <!-- <div style="display:flex; width: 80%; margin: 0 auto"> -->
   <div style="
@@ -131,7 +140,56 @@
       </mdui-collapse-item>
     </mdui-collapse> -->
 
-    <mdui-card style="width: 50%; height: 300px"> </mdui-card>
+    <mdui-card class="parent_box" style="width: 50%; height: 300px">
+      <mdui-list>
+        <mdui-list-item icon="near_me" style="color:#d0bcff">其他平台</mdui-list-item>
+      </mdui-list>
+      <div style="display: flex; align-items: flex-start; flex-wrap: wrap;">
+  <!-- 子元素 -->
+        <div>
+          <mdui-tooltip content="github">
+            <mdui-card class="middle" variant="filled" clickable style="margin-left: 10px;width: 50px;height: 50px;">
+              <a href="https://github.com/vinci-sanchez" target="_blank">
+                <image src="./img/github-mark-white.png" alt="未知"></image>
+              </a>
+            </mdui-card>
+          </mdui-tooltip>
+        </div>
+        <div>
+          <mdui-tooltip content="bilibili">
+            <mdui-card class="middle" variant="filled" clickable style="margin-left: 10px; width: 50px;height: 50px;">
+              <a href="https://space.bilibili.com/1429687130" target="_blank">
+                <img src="./img/bilibili-line.svg" alt="未知"></img>
+              </a>
+            </mdui-card>
+          </mdui-tooltip>
+        </div>
+        <div>
+          <mdui-tooltip content="Telegram">
+            <mdui-card class="middle" variant="filled" clickable style="margin-left: 10px; width: 50px;height: 50px;">
+              <a href="https://t.me/vinci_sanchez" target="_blank">
+                <img src="./img/Telegram.svg" alt="未知"></img>
+              </a>
+            </mdui-card>
+          </mdui-tooltip>
+        </div>
+        <div>
+          <mdui-tooltip content="twitter">
+            <mdui-card class="middle" variant="filled" clickable style="margin-left: 10px; width: 50px;height: 50px;">
+              <a href="https://t.me/vinci_sanchez" target="_blank">
+                <img src="./img/X.svg" alt="未知"></img>
+              </a>
+            </mdui-card>
+          </mdui-tooltip>
+        </div>
+      </div>
+      <mdui-dialog class="example-dialog">
+        <mdui-text-field readonly label="mail" value="vincisanchez@foxmail.com"></mdui-text-field>
+        <mdui-button>关闭</mdui-button>
+      </mdui-dialog>
+
+      <mdui-button id="or_other" class="child-box" style="bottom: 10px;right: 10px;">留言</mdui-button>
+    </mdui-card>
     <div style="width: 50%">
       <mdui-collapse class="example-value">
         <mdui-collapse-item value="item-2">

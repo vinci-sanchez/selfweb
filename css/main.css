@@ -2,9 +2,17 @@
   display: flex;
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
-  width: 100%; /* 示例容器大小 */
+  width: 100vw; /* 示例容器大小 */
   height: 100vh; /* 示例高度，占满视口 */
 }
+.middle img {
+  width: 40px;
+  height: 40px;
+  margin-top: 4px;/*nm*/
+  object-fit: contain;
+  filter: invert(0%);
+}
+
 .parent-box {
   position: relative;
   overflow: hidden;
@@ -12,8 +20,13 @@
 .child-box {
   position: absolute;
 }
+.box{
+  width: 10%;
+  height: 10%;
+  overflow: hidden; /* 确保内容不会溢出容器 */
+}
 .blackgroundtxt {
-  opacity: 0.5;
+  opacity: 0.7;
   pointer-events: none;
   user-select: none;
   color: #d0bcff;
@@ -22,6 +35,9 @@
   display: inline-block; /* 字符独立显示 */
   animation: showAndHide 4s forwards; /* 4秒循环动画 */
   opacity: 0; /* 初始不可见 */
+}
+.pause-animation .char {
+  animation-play-state: paused !important;
 }
 @keyframes showAndHide {
       0% { opacity: 0; } /* 初始不可见 */
