@@ -3,7 +3,6 @@
 import config from "./config.js";
 console.log("config", config);
 //import './node_modules/@mdui/icons/arrow-forward.js';
-
 const Change_mode_button = document.querySelector("#button_mode");
 Change_mode_button.addEventListener("click", Change_mode);
 function Change_mode_first() {
@@ -18,10 +17,17 @@ function Change_mode_first() {
     mode.setAttribute("class", "mdui-theme-dark ");
     button.setAttribute("icon", "bedtime");
   }
+    let svgs = document.querySelectorAll(".middle img");
+  svgs.forEach((img) => {
+    if (Originally === "light") {
+      img.style.filter = "invert(100%)";
+    } else {
+      img.style.filter = "invert(0%)";
+    }
+  });
 }
 Change_mode_first(); //应该跟windows有关的bug
 function Change_mode() {
- 
   const mode = document.documentElement;
   const button = document.querySelector("#button_mode");
   let Originally = mdui.getTheme();
@@ -33,26 +39,29 @@ function Change_mode() {
     mode.setAttribute("class", "mdui-theme-light ");
     button.setAttribute("icon", "light-mode");
   }
-  let svgs=document.querySelectorAll(".middle img");
-  svgs.forEach((img)=>{
-    if(Originally === "light"){
-      img.style.filter="invert(0%)";
-    }else{
-      img.style.filter="invert(100%)";
+  let svgs = document.querySelectorAll(".middle img");
+  svgs.forEach((img) => {
+    if (Originally === "light") {
+      img.style.filter = "invert(0%)";
+    } else {
+      img.style.filter = "invert(100%)";
     }
-  })
+  });
 }
 const stop_css_botton = document.querySelector("#stop_css");
-const hellocard=document.querySelector("#hellocard");
+const stop_css_tooltip = document.querySelector("#stop_css_tooltip");
+const hellocard = document.querySelector("#hellocard");
 stop_css_botton.addEventListener("click", stopcss);
 //暂停css动画
-function stopcss(){
-  if(hellocard.classList.contains('pause-animation')){
-    hellocard.classList.remove('pause-animation'); // 或指定父容器
+function stopcss() {
+  if (hellocard.classList.contains("pause-animation")) {
+    hellocard.classList.remove("pause-animation"); // 或指定父容器
     stop_css_botton.setAttribute("icon", "pause");
-  }else{
-    hellocard.classList.add('pause-animation');
+    stop_css_tooltip.setAttribute("content", "暂停?");
+  } else {
+    hellocard.classList.add("pause-animation");
     stop_css_botton.setAttribute("icon", "sync");
+    stop_css_tooltip.setAttribute("content", "继续!");
   }
 }
 // const snackbartopstart = document.querySelector(
@@ -75,12 +84,13 @@ let cycle = [true, true, true, true, true, true];
 
 show_all_bgdtxt();
 
-function show_all_bgdtxt() {
+async function show_all_bgdtxt() {
   for (let groupIndex = 0; groupIndex < 6; groupIndex++) {
-    // console.log("i=", i);
+    console.log("i=", groupIndex);
     const bgdtxt = document.getElementById("bgdtxt_" + groupIndex);
     bgdtxt.setAttribute("display", "true");
     show_one_bgdtxt(bgdtxt, groupIndex);
+    await new Promise((resolve) => setTimeout(resolve, 500));
   }
 }
 // function cycle_show_bgdtxt(bgdtxt) {
@@ -97,7 +107,7 @@ function show_all_bgdtxt() {
 // }
 function updatabgdtxt(bgdtxt) {
   try {
-    //获取随机整数
+    bgdtxt.style.fontSize = getRandomInt(10, 22) + "px";
     let rand_txt = getRandomInt(0, config.bgdtxt_world.length - 1);
     bgdtxt.textContent = config.bgdtxt_world[rand_txt];
     bgdtxt.style.top = getRandomInt(3, 99) + "%";
@@ -119,28 +129,28 @@ function show_one_bgdtxt(bgdtxt, groupIndex) {
     cycle[groupIndex] = false;
     updatabgdtxt(bgdtxt);
     const text = bgdtxt.textContent.trim(); //获取文本内容并去除首尾空格
-    const show_time=200;//ms
+    const show_time = 200; //ms
     bgdtxt.innerHTML = "";
     bgdtxt.style.display = "block";
     text.split("").forEach((char, index) => {
       const span = document.createElement("span");
       span.className = "char";
       span.style.animation = `showAndHide 3s forwards`; // 动态设置文字显示持续时间
-      span.style.animationDelay = `${index * show_time / 1000}s`; // 动态设置延迟（每字符 0.2 秒）
+      span.style.animationDelay = `${(index * show_time) / 1000}s`; // 动态设置延迟（每字符 0.2 秒）
       span.textContent = char;
       bgdtxt.appendChild(span);
     });
     setTimeout(() => {
-      updatabgdtxt(bgdtxt);
+      // updatabgdtxt(bgdtxt);
       cycle[groupIndex] = true;
       show_one_bgdtxt(bgdtxt, groupIndex);
-    }, 2000 + text.length * show_time + 200); //200不知道干嘛的
+    }, 2000 + text.length * show_time + getRandomInt(0, 500)); //200不知道干嘛的
   } catch (error) {
     console.error("Error showing background text:", error);
   }
 }
-function dont_teach_me() {
-  for (let i = 0; i < 70; i++) {
+async function dont_teach_me() {
+  for (let i = 0; i < 140; i++) {
     const dtm = document.createElement("div");
     dtm.textContent = "别碰我！";
     const text = dtm.textContent.trim(); //获取文本内容并去除首尾空格
@@ -162,6 +172,7 @@ function dont_teach_me() {
       span.textContent = char;
       dtm.appendChild(span);
     });
+    await new Promise((resolve) => setTimeout(resolve, 30));
   }
 }
 let wel_card = 0;
@@ -297,20 +308,29 @@ function show_data(data) {
   } else {
     for (let active_num = 0; active_num <= 9; active_num++) {
       const active_i = document.querySelector("#active_" + active_num);
-      active_i.textContent = "这个比很长时间没用了 "; //Data[active_num];
+      if (active_i.textContent === "") {
+        active_i.textContent = "这个比很长时间没用了or服务器炸了"; //Data[active_num];
+      }
     }
   }
+  const loading_status = document.querySelector("#loading_status");
+  const table = document.querySelector("table");
+  loading_status.style.display = "none";
+  table.style.display = "table";
 }
 //Change_size();
-function Change_size(){
-   const svg = document.querySelector('svg');
+function Change_size() {
+  const svg = document.querySelector("svg");
   if (!svg) return;
-  const paths = svg.querySelectorAll('path');
+  const paths = svg.querySelectorAll("path");
   if (paths.length === 0) return;
 
   // 初始化联合 bbox
-  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-  paths.forEach(path => {
+  let minX = Infinity,
+    minY = Infinity,
+    maxX = -Infinity,
+    maxY = -Infinity;
+  paths.forEach((path) => {
     const bbox = path.getBBox();
     minX = Math.min(minX, bbox.x);
     minY = Math.min(minY, bbox.y);
@@ -320,19 +340,33 @@ function Change_size(){
 
   const width = maxX - minX;
   const height = maxY - minY;
-  svg.setAttribute('viewBox', `${minX} ${minY} ${width} ${height}`);
+  svg.setAttribute("viewBox", `${minX} ${minY} ${width} ${height}`);
 }
 const or_other_bottom = document.querySelector("#or_other");
 or_other_bottom.addEventListener("click", or_other());
-function or_other(){
- const dialog = document.querySelector(".example-dialog");
+function or_other() {
+  const dialog = document.querySelector(".example-dialog");
   const openButton = dialog.nextElementSibling;
-  const closeButton = dialog.querySelector("mdui-button");
+  //const closeButton = dialog.querySelector("mdui-button");
 
-  openButton.addEventListener("click", () => dialog.open = true);
-  closeButton.addEventListener("click", () => dialog.open = false);
+  openButton.addEventListener("click", () => (dialog.open = true));
+  //closeButton.addEventListener("click", () => dialog.open = false);
 }
-  window.addEventListener('load', function() {
-      document.body.classList.remove('loading');
-      document.body.classList.add('loaded');
-    });
+const copyButton = document.querySelector("#copy");
+copyButton.addEventListener("click", copy_mail());
+function copy_mail() {
+  copyButton.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText("vincisanchez@foxmail.com");
+      snackbar.textContent = "邮箱已复制";
+      snackbar.open = true;
+    } catch (error) {
+      console.error("复制失败", error);
+    }
+  });
+}
+
+window.addEventListener("load", function () {
+  document.body.classList.remove("loading");
+  document.body.classList.add("loaded");
+});

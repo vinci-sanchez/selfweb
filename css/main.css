@@ -25,6 +25,7 @@
   height: 10%;
   overflow: hidden; /* 确保内容不会溢出容器 */
 }
+
 .blackgroundtxt {
   opacity: 0.7;
   pointer-events: none;

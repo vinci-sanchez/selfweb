@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="mdui-theme-auto">
+<html lang="zh-CN" class="mdui-theme-dark">
 
 <head>
   <meta charset="UTF-8" />
@@ -39,31 +39,16 @@
             height: 64px;
           ">
         <div class="middle" style="width: 60px; height: 64px">
-          <mdui-button-icon id="stop_css" icon="pause"></mdui-button-icon>
+          <mdui-tooltip id="stop_css_tooltip" content="暂停?">
+            <mdui-button-icon id="stop_css" icon="pause"></mdui-button-icon>
+          </mdui-tooltip>
         </div>
-        <!-- sync -->
         <div class="middle" style="width: 60px; height: 64px">
           <mdui-tooltip content="日or夜">
             <mdui-button-icon id="button_mode" icon="bedtime"></mdui-button-icon>
           </mdui-tooltip>
         </div>
       </div>
-      <!-- <mdui-linear-progress class="child-box"
-        style="transform-origin: top left; transform: rotate(90deg);top: 20%;left: 33%;height: 3px;width: 13%;"></mdui-linear-progress>
-      <mdui-linear-progress class="child-box"
-        style="transform-origin: top left; transform: rotate(90deg);top:30%;left: 67%; height: 3px;width: 30%;"></mdui-linear-progress>
-      <mdui-linear-progress class="child-box" style="top:47%;left: 10%;height: 3px;width: 50%;"></mdui-linear-progress>
-
-      <mdui-linear-progress class="child-box"
-        style="top: 47%;left: 70%; width: 10%;height: 3px;"></mdui-linear-progress>
-      <mdui-linear-progress class="child-box"
-        style="transform-origin: top left; transform: rotate(90deg); top: 50%;left: 33%; height: 3px;width: 15%;"></mdui-linear-progress>
-      <mdui-linear-progress class="child-box" style="top: 65%;left: 10%;width: 70%;height: 3px;"></mdui-linear-progress>
-
-      <mdui-linear-progress class="child-box"
-        style="transform-origin: top left;transform: rotate(90deg);top: 70%;left: 33%; width: 20%;height: 3px;"></mdui-linear-progress>
-      <mdui-linear-progress class="child-box"
-        style="transform-origin: top left;transform: rotate(90deg);top: 70%;left: 67%; width: 30%;height: 3px;"></mdui-linear-progress> -->
       <div id="bgdtxt_0" class="blackgroundtxt child-box"
         style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 65%;font-size: 20px;display: none;">
         背景文字
@@ -101,7 +86,6 @@
       <mdui-snackbar placement="bottom">别点了！！！</mdui-snackbar>
       <mdui-snackbar placement="bottom-end">别点了！！！</mdui-snackbar>
       <mdui-snackbar close-on-outside-click auto-close-delay="1000" class="example-snackbar">欢迎</mdui-snackbar>
-
       <mdui-button variant="text" style="
             transform: scale(1.5);
             font-size: 23px;
@@ -116,36 +100,25 @@
       <!-- <mdui-linear-progress></mdui-linear-progress> -->
     </mdui-card>
   </div>
-  <mdui-avatar src="./img/hand2.jpg" style="vertical-align: top;margin-left: 10px;"></mdui-avatar>
-  <mdui-button-icon icon="bedtime"></mdui-button-icon>
-  <mdui-button>Button</mdui-button>
-  <mdui-button id="theme-toggle" variant="text">点我</mdui-button>
+  <div style="display: flex; align-items: flex-start; flex-wrap: wrap;">
+    <mdui-avatar src="./img/hand2.jpg" style="vertical-align: top;margin-left: 10px;"></mdui-avatar>
+    <span style="margin-top: 10px;margin-left: 10px;">vinci_sanchez</span>
+    <mdui-button-icon icon="bedtime"></mdui-button-icon>
 
-
-  <!-- <div style="display:flex; width: 80%; margin: 0 auto"> -->
+    <mdui-button>Button</mdui-button>
+    <mdui-button id="theme-toggle" variant="text">点我</mdui-button>
+  </div>
   <div style="
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         width: 100%;
       ">
-    <!-- <mdui-card style="width: 100%;">
-    <mdui-list-subheader>非手风琴模式</mdui-list-subheader>
-    <mdui-collapse class="example-value">
-      <mdui-collapse-item value="item-1">
-        <mdui-list-item slot="header" icon="near_me">Item 1</mdui-list-item>
-        <div style="margin-left: 2.5rem">
-          <mdui-list-item>Item 1 - subitem</mdui-list-item>
-        </div>
-      </mdui-collapse-item>
-    </mdui-collapse> -->
-
     <mdui-card class="parent_box" style="width: 50%; height: 300px">
       <mdui-list>
         <mdui-list-item icon="near_me" style="color:#d0bcff">其他平台</mdui-list-item>
       </mdui-list>
       <div style="display: flex; align-items: flex-start; flex-wrap: wrap;">
-  <!-- 子元素 -->
         <div>
           <mdui-tooltip content="github">
             <mdui-card class="middle" variant="filled" clickable style="margin-left: 10px;width: 50px;height: 50px;">
@@ -183,18 +156,30 @@
           </mdui-tooltip>
         </div>
       </div>
-      <mdui-dialog class="example-dialog">
-        <mdui-text-field readonly label="mail" value="vincisanchez@foxmail.com"></mdui-text-field>
-        <mdui-button>关闭</mdui-button>
+      <mdui-dialog close-on-overlay-click class="example-dialog">
+        <div class="parent_box" style="width: 330px;">
+          <mdui-text-field readonly label="mail" value="vincisanchez@foxmail.com"
+            style="width: 250px;"></mdui-text-field>
+          <!-- <mdui-button>关闭</mdui-button> -->
+           
+          <mdui-button id="copy" class="child-box" style="margin-left: 10px; top: 30px;">复制</mdui-button>
+        </div>
       </mdui-dialog>
-
-      <mdui-button id="or_other" class="child-box" style="bottom: 10px;right: 10px;">留言</mdui-button>
+      <mdui-button id="or_other" class="child-box" style="bottom: 10px;right: 10px;">
+        <mdui-icon-mail>mail</mdui-icon-mail>
+      </mdui-button>
     </mdui-card>
     <div style="width: 50%">
       <mdui-collapse class="example-value">
         <mdui-collapse-item value="item-2">
           <mdui-list-item slot="header" icon="near_me">我在干啥？</mdui-list-item>
           <div>
+            <mdui-list-item disabled id="loading_status">
+              <div class="parent_box" style="width: 100%; display: flex; align-items: center;">
+                <mdui-button-icon loading disabled icon="search" variant="tonal"></mdui-button-icon>
+                <div style="margin-left: 10px;">加载中</div>
+              </div>
+            </mdui-list-item>
             <table style="
                   width: 100%;
                   border-collapse: separate;
@@ -203,7 +188,13 @@
                   border-radius: 16px;
                   overflow: hidden;
                   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                  display: none;
                 ">
+              <tr>
+                <td id="time">时间</td>
+                <td id="active">状态</td>
+                <td id="Memory">内存</td>
+              </tr>
               <tr>
                 <td id="time_0">Item 1</td>
                 <td id="active_0">Item 2</td>
@@ -262,10 +253,7 @@
     </div>
   </div>
   <mdui-linear-progress value="0.5"></mdui-linear-progress>
-
   <script src="client.js" type="module"></script>
-
-  <script></script>
 </body>
 
 </html>
