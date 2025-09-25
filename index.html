@@ -14,9 +14,13 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css" />
-  <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+  <!-- <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css" />  -->
+  <!-- <script src="https://unpkg.com/mdui@2/mdui.global.js"></script> -->
+
+  <link rel="stylesheet" href="./css/mdui.css" />
+  <script src="./img/mdui.global.js"></script>
   <link rel="stylesheet" href="./css/main.css" />
+  <script src="./client.jsx" type="module"></script>
   <!-- <style>
   @import url('./css/main.css');
 </style> -->
@@ -103,10 +107,9 @@
   <div style="display: flex; align-items: flex-start; flex-wrap: wrap;">
     <mdui-avatar src="./img/hand2.jpg" style="vertical-align: top;margin-left: 10px;"></mdui-avatar>
     <span style="margin-top: 10px;margin-left: 10px;">vinci_sanchez</span>
-    <mdui-button-icon icon="bedtime"></mdui-button-icon>
-
-    <mdui-button>Button</mdui-button>
-    <mdui-button id="theme-toggle" variant="text">点我</mdui-button>
+    <mdui-button-icon></mdui-button-icon>
+    <mdui-button>没错</mdui-button>
+    <mdui-button id="theme-toggle" variant="text">是我</mdui-button>
   </div>
   <div style="
         display: flex;
@@ -121,36 +124,40 @@
       <div style="display: flex; align-items: flex-start; flex-wrap: wrap;">
         <div>
           <mdui-tooltip content="github">
-            <mdui-card class="middle" variant="filled" clickable style="margin-left: 10px;width: 50px;height: 50px;">
+            <mdui-card class="middle" variant="filled" clickable
+              style="margin-left: 10px;margin-top: 10px; width: 50px;height: 50px;">
               <a href="https://github.com/vinci-sanchez" target="_blank">
-                <image src="./img/github-mark-white.svg" alt="未知"></image>
+                <image src="./img/github-mark-white.svg" alt="github"></image>
               </a>
             </mdui-card>
           </mdui-tooltip>
         </div>
         <div>
           <mdui-tooltip content="bilibili">
-            <mdui-card class="middle" variant="filled" clickable style="margin-left: 10px; width: 50px;height: 50px;">
+            <mdui-card class="middle" variant="filled" clickable
+              style="margin-left: 10px;margin-top: 10px; width: 50px;height: 50px;">
               <a href="https://space.bilibili.com/1429687130" target="_blank">
-                <img src="./img/bilibili-line.svg" alt="未知"></img>
+                <img src="./img/bilibili-line.svg" alt="Bilibili"></img>
               </a>
             </mdui-card>
           </mdui-tooltip>
         </div>
         <div>
           <mdui-tooltip content="Telegram">
-            <mdui-card class="middle" variant="filled" clickable style="margin-left: 10px; width: 50px;height: 50px;">
+            <mdui-card class="middle" variant="filled" clickable
+              style="margin-left: 10px; margin-top: 10px; width: 50px;height: 50px;">
               <a href="https://t.me/vinci_sanchez" target="_blank">
-                <img src="./img/Telegram.svg" alt="未知"></img>
+                <img src="./img/Telegram.svg" alt="Telegram"></img>
               </a>
             </mdui-card>
           </mdui-tooltip>
         </div>
         <div>
           <mdui-tooltip content="twitter">
-            <mdui-card class="middle" variant="filled" clickable style="margin-left: 10px; width: 50px;height: 50px;">
+            <mdui-card class="middle" variant="filled" clickable
+              style="margin-left: 10px; margin-top: 10px; width: 50px;height: 50px;">
               <a href="https://t.me/vinci_sanchez" target="_blank">
-                <img src="./img/X.svg" alt="未知"></img>
+                <img src="./img/X.svg" alt="X"></img>
               </a>
             </mdui-card>
           </mdui-tooltip>
@@ -161,13 +168,16 @@
           <mdui-text-field readonly label="mail" value="vincisanchez@foxmail.com"
             style="width: 250px;"></mdui-text-field>
           <!-- <mdui-button>关闭</mdui-button> -->
-           
+
           <mdui-button id="copy" class="child-box" style="margin-left: 10px; top: 30px;">复制</mdui-button>
         </div>
       </mdui-dialog>
-      <mdui-button id="or_other" class="child-box" style="bottom: 10px;right: 10px;">
-        <mdui-icon-mail>mail</mdui-icon-mail>
-      </mdui-button>
+      <mdui-tooltip content="mail">
+        <mdui-card id="or_other" class="child-box middle" variant="filled" clickable
+          style=" bottom: 10px;right: 10px;width: 50px;height: 50px;">
+          <img src="./img/email.svg" alt="email"></img>
+        </mdui-card>
+      </mdui-tooltip>
     </mdui-card>
     <div style="width: 50%">
       <mdui-collapse class="example-value">
@@ -253,7 +263,7 @@
     </div>
   </div>
   <mdui-linear-progress value="0.5"></mdui-linear-progress>
-  <script src="client.js" type="module"></script>
+
 </body>
 
 </html>

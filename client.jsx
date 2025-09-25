@@ -1,14 +1,35 @@
 // const config = require('./data.js');//dev启动导入
 //import config from './config.json' assert { type: 'json' };//dev启动导入
+
+import React from "react";
+import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client"; // 只保留需要的 import
+
+
+const App = () => {
+  return <div className="text-blue-500"></div>
+};
+
+createRoot(document.getElementById('root')).render(<App />);
+
+
+
+
+
 import config from "./config.js";
+// import "mdui.global.js";
 console.log("config", config);
-//import './node_modules/@mdui/icons/arrow-forward.js';
+
+
+
 const Change_mode_button = document.querySelector("#button_mode");
 Change_mode_button.addEventListener("click", Change_mode);
+
 function Change_mode_first() {
   const mode = document.documentElement;
   const button = document.querySelector("#button_mode");
   let Originally = mdui.getTheme();
+
   if (Originally === "light") {
     mode.setAttribute("class", "mdui-theme-light ");
     button.setAttribute("icon", "light-mode");
@@ -17,7 +38,7 @@ function Change_mode_first() {
     mode.setAttribute("class", "mdui-theme-dark ");
     button.setAttribute("icon", "bedtime");
   }
-    let svgs = document.querySelectorAll(".middle img");
+  let svgs = document.querySelectorAll(".middle img");
   svgs.forEach((img) => {
     if (Originally === "light") {
       img.style.filter = "invert(100%)";
@@ -64,22 +85,6 @@ function stopcss() {
     stop_css_tooltip.setAttribute("content", "继续!");
   }
 }
-// const snackbartopstart = document.querySelector(
-//   ".mdui-snackbar[placement='top-start']"
-// );
-// const snackbartop = document.querySelector(".mdui-snackbar[placement='top']");
-// const snackbartopend = document.querySelector(
-//   ".mdui-snackbar[placement='top-end']"
-// );
-// const snackbarbottomstart = document.querySelector(
-//   ".mdui-snackbar[placement='bottom-start']"
-// );
-// const snackbarbottom = document.querySelector(
-//   ".mdui-snackbar[placement='bottom']"
-// );
-// const snackbarbottomend = document.querySelector(
-//   ".mdui-snackbar[placement='bottom-end']"
-// );
 let cycle = [true, true, true, true, true, true];
 
 show_all_bgdtxt();
@@ -105,6 +110,7 @@ async function show_all_bgdtxt() {
 //     console.error("Error showing background text:", error);
 //   }
 // }
+//更新位置
 function updatabgdtxt(bgdtxt) {
   try {
     bgdtxt.style.fontSize = getRandomInt(10, 22) + "px";
@@ -178,6 +184,22 @@ async function dont_teach_me() {
 let wel_card = 0;
 const snackbar = document.querySelector(".example-snackbar");
 const openButton = snackbar.nextElementSibling;
+//查看电脑端还是移动端
+function isMobileDevice() {
+  return window.matchMedia("(max-width: 768px)").matches;
+}
+say_hello();
+async function say_hello() {
+  // 使用示例
+  if (isMobileDevice()) {
+    snackbar.textContent = "建议电脑端进行查看(｡･ω･｡)ﾉ♡"; //移动端
+    snackbar.open = true;
+    await new Promise((resolve) => setTimeout(resolve, 500));
+  }
+  snackbar.textContent = "HELLO(≧∇≦)/"; //电脑端
+  snackbar.open = true;
+}
+
 function updateSnackbar() {
   switch (wel_card) {
     case 0:
@@ -212,15 +234,12 @@ function updateSnackbar() {
       snackbar.textContent = "别点了！！！";
       show_all_snackbar();
       dont_teach_me();
-    // setTimeout(() => {
-    //   snackbar.textContent = "皮一下真好玩";
-    //     snackbar.open = true;
-    // }, 1000);
-    // break;
+      break;
     default:
       snackbar.textContent = "别点我了QAQ,不皮了";
   }
   wel_card++;
+  console.log("wel_card", wel_card);
 }
 //updateSnackbar();
 function show_all_snackbar() {
@@ -238,8 +257,7 @@ function show_all_snackbar() {
 openButton.addEventListener("click", () => {
   updateSnackbar();
   snackbar.open = true;
-  if (wel_card === 1) {
-  }
+
   openButton.setAttribute("disabled", "true");
   setTimeout(() => {
     openButton.setAttribute("disabled", "false");
@@ -249,7 +267,7 @@ main_active();
 async function main_active() {
   let data;
   data = await get_windows_active();
-  console.log("获取的数据1", data);
+  //console.log("获取的数据1", data);
   show_data(data);
 }
 async function get_windows_active() {
@@ -366,7 +384,7 @@ function copy_mail() {
   });
 }
 
-window.addEventListener("load", function () {
-  document.body.classList.remove("loading");
-  document.body.classList.add("loaded");
-});
+// window.addEventListener("load", function () {
+//   document.body.classList.remove("loading");
+//   document.body.classList.add("loaded");
+// });
