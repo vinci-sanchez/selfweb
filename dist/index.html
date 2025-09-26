@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="mdui-theme-dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css" />  -->
+  <!-- <script src="https://unpkg.com/mdui@2/mdui.global.js"></script> -->
+
+  <script src="./img/mdui.global.js"></script>
+  <!-- <style>
+  @import url('./css/main.css');
+</style> -->
+  <!-- <script src="./index.js" type="module"></script> -->
+  <!-- TMD跟那小丑一样
+       杀碧东西
+       老一辈和新方法
+       草 -->
+  <title>神秘的小空间</title>
+  <script type="module" crossorigin src="./assets/index-B7nNN8SO.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DT5__IrA.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <div>
+    <mdui-card id="hellocard" style="position: relative; width: 100%; height: 98.5vh" variant="outlined" clickable>
+      <div style="
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            height: 64px;
+          ">
+        <div class="middle" style="width: 60px; height: 64px">
+          <mdui-tooltip id="stop_css_tooltip" content="暂停?">
+            <mdui-button-icon id="stop_css" icon="pause"></mdui-button-icon>
+          </mdui-tooltip>
+        </div>
+        <div class="middle" style="width: 60px; height: 64px">
+          <mdui-tooltip content="日or夜">
+            <mdui-button-icon id="button_mode" icon="bedtime"></mdui-button-icon>
+          </mdui-tooltip>
+        </div>
+      </div>
+      <div id="bgdtxt_0" class="blackgroundtxt child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 65%;font-size: 20px;display: none;">
+        背景文字
+      </div>
+      <!-- 应该是一个就行 -->
+      <!-- ok，不是一个就行 -->
+      <div id="bgdtxt_1" class="blackgroundtxt child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 67%;font-size: 20px;display: none;">
+        背景文字
+      </div>
+      <div id="bgdtxt_2" class="blackgroundtxt child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 69%;font-size: 20px;display: none;">
+        背景文字
+      </div>
+      <div id="bgdtxt_3" class="blackgroundtxt child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 72%;font-size: 20px;display: none;">
+        背景文字
+      </div>
+      <div id="bgdtxt_4" class="blackgroundtxt child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 74%;font-size: 20px;display: none;">
+        背景文字
+      </div>
+      <div id="bgdtxt_5" class="blackgroundtxt child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 76%;font-size: 20px;display: none;">
+        背景文字
+      </div>
+      <div id="bgdtxt_6" class="blackgroundtxt child-box"
+        style="transform-origin: top left;transform: rotate(90deg);top: 10%;left: 78%;font-size: 20px;display: none;">
+        背景文字
+      </div>
+      <mdui-snackbar placement="top-start">别点了！！！</mdui-snackbar>
+      <mdui-snackbar placement="top">别点了！！！</mdui-snackbar>
+      <mdui-snackbar placement="top-end">别点了！！！</mdui-snackbar>
+      <mdui-snackbar placement="bottom-start">别点了！！！</mdui-snackbar>
+      <mdui-snackbar placement="bottom">别点了！！！</mdui-snackbar>
+      <mdui-snackbar placement="bottom-end">别点了！！！</mdui-snackbar>
+      <mdui-snackbar close-on-outside-click auto-close-delay="1000" class="example-snackbar">欢迎</mdui-snackbar>
+      <mdui-button variant="text" style="
+            transform: scale(1.5);
+            font-size: 23px;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 60px;
+            display: flex;
+          ">Hello!</mdui-button>
+      <!-- <mdui-linear-progress></mdui-linear-progress> -->
+    </mdui-card>
+  </div>
+  <div style="display: flex; align-items: flex-start; flex-wrap: wrap;">
+    <mdui-avatar src="./img/hand2.jpg" style="vertical-align: top;margin-left: 10px;"></mdui-avatar>
+    <span style="margin-top: 10px;margin-left: 10px;">vinci_sanchez</span>
+    <mdui-button-icon></mdui-button-icon>
+    <mdui-button>没错</mdui-button>
+    <mdui-button id="theme-toggle" variant="text">是我</mdui-button>
+  </div>
+  <div style="
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+      ">
+    <mdui-card class="parent_box" style="width: 50%; height: 300px">
+      <mdui-list>
+        <mdui-list-item icon="near_me" style="color:#d0bcff">其他平台</mdui-list-item>
+      </mdui-list>
+      <div style="display: flex; align-items: flex-start; flex-wrap: wrap;">
+        <div>
+          <mdui-tooltip content="github">
+            <mdui-card class="middle" variant="filled" clickable
+              style="margin-left: 10px;margin-top: 10px; width: 50px;height: 50px;">
+              <a href="https://github.com/vinci-sanchez" target="_blank">
+                <image src="data:image/svg+xml,%3csvg%20width='98'%20height='96'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M48.854%200C21.839%200%200%2022%200%2049.217c0%2021.756%2013.993%2040.172%2033.405%2046.69%202.427.49%203.316-1.059%203.316-2.362%200-1.141-.08-5.052-.08-9.127-13.59%202.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015%204.934.326%207.523%205.052%207.523%205.052%204.367%207.496%2011.404%205.378%2014.235%204.074.404-3.178%201.699-5.378%203.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283%200-5.378%201.94-9.778%205.014-13.2-.485-1.222-2.184-6.275.486-13.038%200%200%204.125-1.304%2013.426%205.052a46.97%2046.97%200%200%201%2012.214-1.63c4.125%200%208.33.571%2012.213%201.63%209.302-6.356%2013.427-5.052%2013.427-5.052%202.67%206.763.97%2011.816.485%2013.038%203.155%203.422%205.015%207.822%205.015%2013.2%200%2018.905-11.404%2023.06-22.324%2024.283%201.78%201.548%203.316%204.481%203.316%209.126%200%206.6-.08%2011.897-.08%2013.526%200%201.304.89%202.853%203.316%202.364%2019.412-6.52%2033.405-24.935%2033.405-46.691C97.707%2022%2075.788%200%2048.854%200z'%20fill='%23fff'/%3e%3c/svg%3e" alt="github"></image>
+              </a>
+            </mdui-card>
+          </mdui-tooltip>
+        </div>
+        <div>
+          <mdui-tooltip content="bilibili">
+            <mdui-card class="middle" variant="filled" clickable
+              style="margin-left: 10px;margin-top: 10px; width: 50px;height: 50px;">
+              <a href="https://space.bilibili.com/1429687130" target="_blank">
+                <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%3e%3cpath%20fill='%23FFFFFF'%20d='M7.172%202.757L10.414%206h3.171l3.243-3.242a1%201%200%201%201%201.415%201.415L16.414%206H18.5A3.5%203.5%200%200%201%2022%209.5v8a3.5%203.5%200%200%201-3.5%203.5h-13A3.5%203.5%200%200%201%202%2017.5v-8A3.5%203.5%200%200%201%205.5%206h2.085L5.757%204.171a1%201%200%200%201%201.415-1.415M18.5%208h-13a1.5%201.5%200%200%200-1.493%201.356L4%209.5v8a1.5%201.5%200%200%200%201.356%201.493L5.5%2019h13a1.5%201.5%200%200%200%201.493-1.355L20%2017.5v-8A1.5%201.5%200%200%200%2018.5%208M8%2011a1%201%200%200%201%201%201v2a1%201%200%201%201-2%200v-2a1%201%200%200%201%201-1m8%200a1%201%200%200%201%201%201v2a1%201%200%201%201-2%200v-2a1%201%200%200%201%201-1'/%3e%3c/svg%3e" alt="Bilibili"></img>
+              </a>
+            </mdui-card>
+          </mdui-tooltip>
+        </div>
+        <div>
+          <mdui-tooltip content="Telegram">
+            <mdui-card class="middle" variant="filled" clickable
+              style="margin-left: 10px; margin-top: 10px; width: 50px;height: 50px;">
+              <a href="https://t.me/vinci_sanchez" target="_blank">
+                <img src="data:image/svg+xml,%3c?xml%20version='1.0'?%3e%3csvg%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20240.1%20240.1'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20fill='%23FFFFFF'%20d='M54.3,118.8c35-15.2,58.3-25.3,70-30.2%20c33.3-13.9,40.3-16.3,44.8-16.4c1,0,3.2,0.2,4.7,1.4c1.2,1,1.5,2.3,1.7,3.3s0.4,3.1,0.2,4.7c-1.8,19-9.6,65.1-13.6,86.3%20c-1.7,9-5,12-8.2,12.3c-7,0.6-12.3-4.6-19-9c-10.6-6.9-16.5-11.2-26.8-18c-11.9-7.8-4.2-12.1,2.6-19.1c1.8-1.8,32.5-29.8,33.1-32.3%20c0.1-0.3,0.1-1.5-0.6-2.1c-0.7-0.6-1.7-0.4-2.5-0.2c-1.1,0.2-17.9,11.4-50.6,33.5c-4.8,3.3-9.1,4.9-13,4.8%20c-4.3-0.1-12.5-2.4-18.7-4.4c-7.5-2.4-13.5-3.7-13-7.9C45.7,123.3,48.7,121.1,54.3,118.8z'/%3e%3c/svg%3e" alt="Telegram"></img>
+              </a>
+            </mdui-card>
+          </mdui-tooltip>
+        </div>
+        <div>
+          <mdui-tooltip content="twitter">
+            <mdui-card class="middle" variant="filled" clickable
+              style="margin-left: 10px; margin-top: 10px; width: 50px;height: 50px;">
+              <a href="https://t.me/vinci_sanchez" target="_blank">
+                <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='UTF-8'?%3e%3csvg%20width='300'%20height='300'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill='%23FFFFFF'%20d='m21.742%2021.75-7.563-11.179%207.056-8.321h-2.456l-5.691%206.714-4.54-6.714h-6.189l7.29%2010.776-7.399%208.724h2.456l6.035-7.118%204.818%207.118h6.191zm-14.003-17.932%2011.071%2016.364h-2.447l-11.073-16.364h2.447z'/%3e%3c/svg%3e" alt="X"></img>
+              </a>
+            </mdui-card>
+          </mdui-tooltip>
+        </div>
+      </div>
+      <mdui-dialog close-on-overlay-click class="example-dialog">
+        <div class="parent_box" style="width: 330px;">
+          <mdui-text-field readonly label="mail" value="vincisanchez@foxmail.com"
+            style="width: 250px;"></mdui-text-field>
+          <!-- <mdui-button>关闭</mdui-button> -->
+
+          <mdui-button id="copy" class="child-box" style="margin-left: 10px; top: 30px;">复制</mdui-button>
+        </div>
+      </mdui-dialog>
+      <mdui-tooltip content="mail">
+        <mdui-card id="or_other" class="child-box middle" variant="filled" clickable
+          style=" bottom: 10px;right: 10px;width: 50px;height: 50px;">
+          <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M4%207.00005L10.2%2011.65C11.2667%2012.45%2012.7333%2012.45%2013.8%2011.65L20%207'%20fill='none'%20stroke='%23FFFFFF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3crect%20x='3'%20y='5'%20width='18'%20height='14'%20rx='2'%20fill='none'%20stroke='%23FFFFFF'%20stroke-width='2'%20stroke-linecap='round'/%3e%3c/svg%3e" alt="email"></img>
+        </mdui-card>
+      </mdui-tooltip>
+    </mdui-card>
+    <div style="width: 50%">
+      <mdui-collapse class="example-value">
+        <mdui-collapse-item value="item-2">
+          <mdui-list-item slot="header" icon="near_me">我在干啥？</mdui-list-item>
+          <div>
+            <mdui-list-item disabled id="loading_status">
+              <div class="parent_box" style="width: 100%; display: flex; align-items: center;">
+                <mdui-button-icon loading disabled icon="search" variant="tonal"></mdui-button-icon>
+                <div style="margin-left: 10px;">加载中</div>
+              </div>
+            </mdui-list-item>
+            <table style="
+                  width: 100%;
+                  border-collapse: separate;
+                  border-spacing: 0;
+                  margin: 0 auto;
+                  border-radius: 16px;
+                  overflow: hidden;
+                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                  display: none;
+                ">
+              <tr>
+                <td id="time">时间</td>
+                <td id="active">状态</td>
+                <td id="Memory">内存</td>
+              </tr>
+              <tr>
+                <td id="time_0">Item 1</td>
+                <td id="active_0">Item 2</td>
+                <td id="Memory_0">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_1">Item 1</td>
+                <td id="active_1">Item 2</td>
+                <td id="Memory_1">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_2">Item 1</td>
+                <td id="active_2">Item 2</td>
+                <td id="Memory_2">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_3">Item 1</td>
+                <td id="active_3">Item 2</td>
+                <td id="Memory_3">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_4">Item 1</td>
+                <td id="active_4">Item 2</td>
+                <td id="Memory_4">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_5">Item 1</td>
+                <td id="active_5">Item 2</td>
+                <td id="Memory_5">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_6">Item 1</td>
+                <td id="active_6">Item 2</td>
+                <td id="Memory_6">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_7">Item 1</td>
+                <td id="active_7">Item 2</td>
+                <td id="Memory_7">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_8">Item 1</td>
+                <td id="active_8">Item 2</td>
+                <td id="Memory_8">Item 2</td>
+              </tr>
+              <tr>
+                <td id="time_9">Item 1</td>
+                <td id="active_9">Item 2</td>
+                <td id="Memory_9">Item 2</td>
+              </tr>
+              <!-- <mdui-list-item>Item 2 - subitem</mdui-list-item> -->
+            </table>
+          </div>
+        </mdui-collapse-item>
+      </mdui-collapse>
+    </div>
+  </div>
+  <mdui-linear-progress value="0.5"></mdui-linear-progress>
+
+</body>
+
+</html>
